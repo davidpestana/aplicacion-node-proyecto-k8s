@@ -22,7 +22,7 @@ client.connect().then(() => console.log("✅ Conectado a DB"))
 app.get('/', async (req, res) => {
   try {
     const result = await client.query('SELECT NOW()');
-    res.send(`Hola Mundo – Fecha: ${result.rows[0].now} – ${process.env.APP_VERSION || "v1"}`);
+    res.send(`Hola Mundo – Fecha: ${result.rows[0].now} – ${process.env.APP_VERSION || "v2"}`);
   } catch (err) {
     res.status(500).send("Error consultando DB");
   }
